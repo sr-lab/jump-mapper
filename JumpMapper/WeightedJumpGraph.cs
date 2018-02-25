@@ -48,7 +48,7 @@ namespace JumpMapper
         {
             if (jumps.Count == 0)
             {
-                return 0;
+                return Weight;
             }
 
             return Weight + Children.First(c => c.AssociatedJump.Same(jumps[0]))
