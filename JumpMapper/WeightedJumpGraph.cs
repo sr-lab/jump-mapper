@@ -43,5 +43,16 @@ namespace JumpMapper
             var target = Children.First(c => c.AssociatedJump.Same(jumps[0]));
             target.Insert(jumps.GetRange(1, jumps.Count - 1), weight);
         }
+
+        public int Lookup(List<Jump> jumps)
+        {
+            if (jumps.Count == 0)
+            {
+                return 0;
+            }
+
+            return Weight + Children.First(c => c.AssociatedJump.Same(jumps[0]))
+                .Lookup(jumps.GetRange(1, jumps.Count - 1));
+        }
     }
 }
