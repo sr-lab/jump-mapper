@@ -33,6 +33,15 @@ namespace JumpMapper
                     pad.Process(split[0], int.Parse(split[1]));
                 }
             }
+
+            var output = new Dictionary<string, int>();
+            for (int i = 0; i < 10000; i++)
+            {
+                var pin = i.ToString().PadLeft(4, '0');
+                var val = pad.Lookup(pin);
+                output.Add(pin, val);
+                Console.WriteLine($"{pin},{val}");
+            }
         }
     }
 }
