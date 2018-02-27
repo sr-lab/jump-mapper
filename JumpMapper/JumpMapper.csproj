@@ -58,6 +58,7 @@
     <None Include="Training\complete.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Training\complete_expanded.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\4digit.txt">
