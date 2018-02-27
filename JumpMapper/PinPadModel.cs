@@ -85,5 +85,15 @@ namespace JumpMapper
         {
             graph.Insert(ToJumps(pin), weight);
         }
+
+        /// <summary>
+        /// Orders a number of PINs by probability (best guess first).
+        /// </summary>
+        /// <param name="pins">The guesses to order.</param>
+        /// <returns></returns>
+        public List<string> Rank(List<string> pins)
+        {
+            return pins.OrderBy(x => Lookup(x)).ToList();
+        }
     }
 }
