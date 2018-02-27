@@ -55,11 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\testing.csv" />
     <None Include="Training\complete.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Training\complete_expanded.csv" />
     <None Include="Training\complete_expanded_shuffled.csv" />
+    <None Include="Training\training.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\4digit.txt">
