@@ -66,7 +66,7 @@ namespace JumpMapper.RandomPinGenerator
             while (output.Count < count)
             {
                 string buffer = null;
-                while (!output.Contains(buffer))
+                while (output.Contains(buffer))
                 {
                     buffer = GenerateRandomPin(length);
                 }
