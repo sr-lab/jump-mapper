@@ -63,10 +63,10 @@ namespace JumpMapper.RandomPinGenerator
 
             // Generate unique random PINs.
             List<string> output = new List<string>();
-            while (output.Count < count)
+            while (output.Count <= count)
             {
                 string buffer = null;
-                while (output.Contains(buffer))
+                while (buffer == null || output.Contains(buffer))
                 {
                     buffer = GenerateRandomPin(length);
                 }
