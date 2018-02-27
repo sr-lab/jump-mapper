@@ -56,14 +56,40 @@ namespace JumpMapper
                 }
             }
 
-            // Process file, output results.
+            // Read in file to process.
             var input = ReadFileAsLines(args[1]);
-            Console.WriteLine("pin, vulnerability");
-            for (var i = 0; i < input.Length; i++)
+
+            // Plain output goes straight to console.
+            if (format == "plain")
             {
-                var pin = input[i];
-                var val = pad.Lookup(pin);
-                Console.WriteLine($"{pin}, {val}");
+                Console.WriteLine("pin, vulnerability");
+                for (var i = 0; i < input.Length; i++)
+                {
+                    var pin = input[i];
+                    var val = pad.Lookup(pin);
+                    Console.WriteLine($"{pin}, {val}");
+                }
+            }
+            else if (format == "coq")
+            {
+                // Coq format needs placing into template.
+                var output = new StringBuilder();
+                for (var i = 0; i < input.Length; i++)
+                {
+                    var pin = input[i];
+                    var val = pad.Lookup(pin);
+                    output.Append($"  ({pin}, {val} # 1)");
+                    if (i != input.Length - 1)
+                    {
+                        output.Append(",");
+                        output.AppendLine();
+                    }
+                }
+
+                // Output template to console with placeholders filled.
+                Console.Write(Properties.Resources.coq_template
+                    .Replace("%NAME", Path.GetFileNameWithoutExtension(args[1]) + "_pin_freqs")
+                    .Replace("%PASSWORDS", output.ToString()));
             }
         }
     }
