@@ -81,7 +81,7 @@ namespace JumpMapper
                     output.Append($"  (\"{pin}\", {val} # 1)");
                     if (i != input.Length - 1)
                     {
-                        output.Append(",");
+                        output.Append(";");
                         output.AppendLine();
                     }
                 }
