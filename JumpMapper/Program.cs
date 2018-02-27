@@ -14,7 +14,7 @@ namespace JumpMapper
         /// </summary>
         /// <param name="filename">The filename of the file to read.</param>
         /// <returns></returns>
-        private static IEnumerable<string> ReadFileAsLines(string filename)
+        private static string[] ReadFileAsLines(string filename)
         {
             return File.ReadAllText(filename)
                 .Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
@@ -22,8 +22,30 @@ namespace JumpMapper
 
         static void Main(string[] args)
         {
-            var pad = new PinPadModel();
+            // Check number of arguments.
+            if (args.Length < 2)
+            {
+                Console.WriteLine("Usage: JumpMapper <training_file> <input_file> [format]");
+                return;
+            }
 
+            // Check file exists.
+            if (!File.Exists(args[0]) || !File.Exists(args[1]))
+            {
+                Console.WriteLine("Could not read one or more input file.");
+                return;
+            }
+
+            // Validate format, default to plain.
+            var format = "plain";
+            var permittedFormats = new string[] { "plain", "coq" };
+            if (args.Length > 2 && permittedFormats.Contains(args[2]))
+            {
+                format = args[2];
+            }
+
+            // Train model.
+            var pad = new PinPadModel();
             var lines = ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
@@ -34,13 +56,14 @@ namespace JumpMapper
                 }
             }
 
-            var output = new Dictionary<string, int>();
-            for (int i = 0; i < 10000; i++)
+            // Process file, output results.
+            var input = ReadFileAsLines(args[1]);
+            Console.WriteLine("pin, vulnerability");
+            for (var i = 0; i < input.Length; i++)
             {
-                var pin = i.ToString().PadLeft(4, '0');
+                var pin = input[i];
                 var val = pad.Lookup(pin);
-                output.Add(pin, val);
-                Console.WriteLine($"{pin},{val}");
+                Console.WriteLine($"{pin}, {val}");
             }
         }
     }

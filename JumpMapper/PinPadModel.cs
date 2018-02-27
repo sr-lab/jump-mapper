@@ -73,7 +73,7 @@ namespace JumpMapper
         /// <returns></returns>
         public int Lookup(string pin)
         {
-            return graph.Lookup(ToJumps(pin));
+            return graph.Lookup(ToJumps(pin)) - graph.Weight; // Subtract weight of root.
         }
 
         /// <summary>
