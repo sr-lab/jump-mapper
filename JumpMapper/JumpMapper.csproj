@@ -55,17 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Data\testing.csv" />
-    <None Include="Training\complete.csv">
+    <Content Include="Data\testing.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Training\complete_expanded.csv" />
-    <None Include="Training\complete_expanded_shuffled.csv" />
-    <None Include="Training\training.csv" />
+    </Content>
+    <Content Include="Training\complete.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Training\training.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\4digit.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\coq_template.txt" />
   </ItemGroup>
