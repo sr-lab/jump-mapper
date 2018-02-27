@@ -1,0 +1,17 @@
+Require Import Coq.Lists.List.
+Require Import Coq.Strings.String.
+Require Import Coq.QArith.QArith.
+
+Require Import Skeptic.Trie.
+
+Import ListNotations.
+
+Open Scope string_scope.
+Open Scope Q_scope.
+
+Definition %NAME : list (string * Q)%type := [
+  %PASSWORDS
+].
+
+Definition %NAME_trie :=
+  create_lookup_trie %NAME.
