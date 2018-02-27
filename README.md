@@ -59,6 +59,20 @@ Unseen data is provided as a text file with one PIN per line:
 ...
 ```
 
+## Output
+Output is produced in the following `plain` format. Higher `vulnerability` means the PIN is a worse choice.
+
+```
+pin, vulnerability
+0000, 118409
+0001, 116563
+0002, 116529
+0003, 116521
+0004, 116715
+0005, 116817
+...
+```
+
 ## Credits
 - PIN numbers sorted by frequency: http://jemore.free.fr/wordpress/?p=73&t=most-common-pin-numbers-complete-list
 - Original PIN number frequency analysis: http://www.datagenetics.com/blog/september32012/
