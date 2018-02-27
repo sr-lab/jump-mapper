@@ -78,7 +78,7 @@ namespace JumpMapper
                 {
                     var pin = input[i];
                     var val = pad.Lookup(pin);
-                    output.Append($"  ({pin}, {val} # 1)");
+                    output.Append($"  (\"{pin}\", {val} # 1)");
                     if (i != input.Length - 1)
                     {
                         output.Append(",");

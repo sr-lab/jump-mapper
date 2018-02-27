@@ -10,7 +10,7 @@ Open Scope string_scope.
 Open Scope Q_scope.
 
 Definition %NAME : list (string * Q)%type := [
-  %PASSWORDS
+%PASSWORDS
 ].
 
 Definition %NAME_trie :=
