@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JumpMapper.Shared;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,17 +10,6 @@ namespace JumpMapper
 {
     class Program
     {
-        /// <summary>
-        /// Reads a file as lines, returning it as an array of strings.
-        /// </summary>
-        /// <param name="filename">The filename of the file to read.</param>
-        /// <returns></returns>
-        private static string[] ReadFileAsLines(string filename)
-        {
-            return File.ReadAllText(filename)
-                .Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-        }
-
         static void Main(string[] args)
         {
             // Check number of arguments.
@@ -46,7 +36,7 @@ namespace JumpMapper
 
             // Train model.
             var pad = new PinPadModel();
-            var lines = ReadFileAsLines(args[0]);
+            var lines = FileUtils.ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
                 var split = line.Split(';');
@@ -57,7 +47,7 @@ namespace JumpMapper
             }
 
             // Read in file to process.
-            var input = ReadFileAsLines(args[1]);
+            var input = FileUtils.ReadFileAsLines(args[1]);
 
             // Plain output goes straight to console.
             if (format == "plain")
