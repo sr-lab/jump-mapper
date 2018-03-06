@@ -11,38 +11,13 @@ namespace JumpMapper.PinHarvester
     class Program
     {
         /// <summary>
-        /// Writes the specified number of backspace characters to the console window.
+        /// Returns true if the given character is an ASCII Arabic numeral, otherwise returns false.
         /// </summary>
-        /// <param name="len">The number of backspace characters to write.</param>
-        private static void WriteBackspace(int len)
-        {
-            for (int i = 0; i < len; i++)
-            {
-                Console.Write('\b'); 
-            }
-        }
-
-        /// <summary>
-        /// Writes the current progress percentage to the console.
-        /// </summary>
-        /// <param name="previous">The previous progress as an arbitrary integer.</param>
-        /// <param name="next">The next (current) progress as an arbitrary integer.</param>
-        /// <param name="total">The total progress being worked towards.</param>
-        /// <param name="delete">Whether or not to delete the previous progress before writing the new.</param>
+        /// <param name="chr">The character to check.</param>
         /// <returns></returns>
-        private static int WriteProgress(int previous, int next, int total, bool delete = true)
+        private static bool IsArabicNumeral(char chr)
         {
-            // Delete existing percentage and sign.
-            if (delete)
-            {
-                WriteBackspace(previous.ToString().Length + 1);
-            }
-
-            // Write percentage.
-            var currentPercentage = (int)Math.Round((double)(next / total) * 100);
-            Console.Write(currentPercentage + "%");
-
-            return currentPercentage;
+            return chr >= 48 && chr <= 57;
         }
 
         /// <summary>
@@ -59,7 +34,7 @@ namespace JumpMapper.PinHarvester
             for (int i = 0; i <= str.Length; i++)
             {
                 // If we've gone past the end of the string or read past an island.
-                if (i == str.Length || !char.IsDigit(str[i]))
+                if (i == str.Length || !IsArabicNumeral(str[i]))
                 {
                     // Anything on our buffer goes to output, then empty buffer.
                     if (buffer.Length > 0)
@@ -114,11 +89,7 @@ namespace JumpMapper.PinHarvester
 
             // Read input file.
             var lines = FileUtils.ReadFileAsLines(args[0]);
-            var total = lines.Length;
 
-            // Show percentage display.
-            var progress = WriteProgress(0, 0, total, false);
-            
             // Loop over input file.
             var output = new Dictionary<string, int>();
             for (var i = 0; i < lines.Length; i++)
@@ -128,7 +99,7 @@ namespace JumpMapper.PinHarvester
                 for (var j = 0; j < chunks.Length; j++)
                 {
                     // Expand each chunk into PINs of desired length.
-                    var expanded = ExpandChunk(chunks[i], length);
+                    var expanded = ExpandChunk(chunks[j], length);
                     for (var k = 0; k < expanded.Length; k++)
                     {
                         // Increment count of that chunk.
@@ -139,13 +110,7 @@ namespace JumpMapper.PinHarvester
                         output[expanded[k]]++;
                     }
                 }
-
-                // Update progress.
-                progress = WriteProgress(progress, i, total);
             }
-
-            // End progress line.
-            Console.WriteLine();
 
             // Now we output everything.
             foreach (var entry in output)
