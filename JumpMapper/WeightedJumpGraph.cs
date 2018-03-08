@@ -84,8 +84,12 @@ namespace JumpMapper
             }
 
             // Recursively look up value (add value of current node).
-            return Weight + Children.First(c => c.AssociatedJump.Same(jumps[0]))
-                .Lookup(jumps.GetRange(1, jumps.Count - 1));
+            var child = Children.FirstOrDefault(c => c.AssociatedJump.Same(jumps[0]));
+            if (child == null)
+            {
+                return 0;
+            }
+            return Weight + child.Lookup(jumps.GetRange(1, jumps.Count - 1));
         }
     }
 }

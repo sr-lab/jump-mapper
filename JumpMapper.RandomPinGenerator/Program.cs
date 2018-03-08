@@ -38,7 +38,8 @@ namespace JumpMapper.RandomPinGenerator
             // Print usage if necessary.
             if (args.Length > 2 || args.Contains("-?"))
             {
-                Console.WriteLine("Usage: RandomPinGenerator [-?] <length> <count>");
+                Console.WriteLine("Usage: RandomPinGenerator [-?] [length=4] [count=100]");
+                return;
             }
 
             // Parse given length.

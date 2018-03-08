@@ -44,6 +44,10 @@ namespace JumpMapper
                 {
                     pad.Process(split[0], int.Parse(split[1]));
                 }
+                else if (split.Length == 1)
+                {
+                    pad.Process(split[0], 1);
+                }
             }
 
             // Read in file to process.

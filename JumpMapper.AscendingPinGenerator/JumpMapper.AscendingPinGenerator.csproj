@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96FAC6CB-D9A2-4185-AABA-E5891CED0726}</ProjectGuid>
+    <ProjectGuid>{6A2DDFF6-6FC3-4297-8C1F-3C41972192E8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>JumpMapper.PinHarvester</RootNamespace>
-    <AssemblyName>JumpMapper.PinHarvester</AssemblyName>
+    <RootNamespace>JumpMapper.AscendingPinGenerator</RootNamespace>
+    <AssemblyName>JumpMapper.AscendingPinGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JumpMapper.Shared\JumpMapper.Shared.csproj">
-      <Project>{05d3fc93-5699-4874-9fe2-e3b9624e5d19}</Project>
-      <Name>JumpMapper.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
