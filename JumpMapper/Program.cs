@@ -35,7 +35,7 @@ namespace JumpMapper
             }
 
             // Train model.
-            var pad = new PinPadModel();
+            var pad = new PinPadModel(new NumBarPinPadLayout());
             var lines = FileUtils.ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {

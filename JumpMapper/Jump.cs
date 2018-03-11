@@ -9,7 +9,7 @@ namespace JumpMapper
     /// <summary>
     /// Represents a jump from one key to another on a PIN pad.
     /// </summary>
-    class Jump
+    public class Jump
     {
         /// <summary>
         /// The x-offset of the jump.

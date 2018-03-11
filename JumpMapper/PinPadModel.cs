@@ -18,21 +18,10 @@ namespace JumpMapper
         /// <summary>
         /// Initializes a new instance of a model of a PIN pad.
         /// </summary>
-        public PinPadModel()
+        public PinPadModel(IPinPadLayout layout)
         {
             // Place digits at correct PIN pad positions (offsets)
-            baseOffsets = new Dictionary<int, Jump>() {
-                { 1, new Jump(-1, -1) },
-                { 2, new Jump(0, -1) },
-                { 3, new Jump(1, -1) },
-                { 4, new Jump(-1, 0) },
-                { 5, new Jump(0, 0) },
-                { 6, new Jump(1, 0) },
-                { 7, new Jump(-1, 1) },
-                { 8, new Jump(0, 1) },
-                { 9, new Jump(1, 1) },
-                { 0, new Jump(0, 2) },
-            };
+            baseOffsets = layout.GetBaseOffsets();
 
             // Initialize root of weighted graph.
             graph = new WeightedJumpGraph();
