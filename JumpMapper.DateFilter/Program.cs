@@ -45,11 +45,13 @@ namespace JumpMapper.DateFilter
         /// <returns></returns>
         private static string[] SplitDate(string str)
         {
+            // Only work for 6-digit PINs.
             if (str.Length != 6)
             {
                 return null;
             }
 
+            // Split 6-digit PIN into date format.
             return new string[] {
                 str.Substring(0, 2),
                 str.Substring(2, 2),
@@ -64,12 +66,14 @@ namespace JumpMapper.DateFilter
         /// <returns></returns>
         private static bool IsValidDate(string str)
         {
+            // Try to split string into chunks. Failure results in null.
             var chunks = SplitDate(str);
             if (chunks == null)
             {
                 return false;
             }
 
+            // Work with ddmmyy, mmddyy, yymmdd or yyddmm formats.
             return (IsValidDay(chunks[0]) && IsValidMonth(chunks[1]))
                 || (IsValidDay(chunks[1]) && IsValidMonth(chunks[0]))
                 || (IsValidDay(chunks[1]) && IsValidMonth(chunks[2]))
