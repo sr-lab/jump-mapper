@@ -9,13 +9,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="390mm"
-   height="247.85713mm"
-   viewBox="0 0 390 247.85713"
+   width="185.89287mm"
+   height="247.85715mm"
+   viewBox="0 0 185.89287 247.85715"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="pin_pad.svg">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="pin_pad.svg"
+   inkscape:export-filename="C:\Users\saula\OneDrive\Documents\GitHub\jump-mapper\assets\pin_pad.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="369.45298"
+     inkscape:cx="395.16795"
      inkscape:cy="444.04553"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -36,9 +39,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:lockguides="true"
      showguides="false" />
@@ -58,7 +61,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(61.952383,-4.5059547)">
+     transform="translate(-40.101185,-4.5059547)">
     <circle
        r="29.482143"
        cy="221.38095"
@@ -343,32 +346,15 @@
        inkscape:flatsided="false"
        inkscape:rounded="0"
        inkscape:randomized="0"
-       d="m 71.083328,88.380939 2.175741,5.511169 5.665357,-1.735095 -2.952253,5.13722 4.888844,3.347537 -5.85714,0.89484 0.430932,5.90941 -4.351481,-4.02137 -4.351481,4.02137 0.430932,-5.90941 -5.85714,-0.89484 4.888845,-3.347537 -2.952253,-5.13722 5.665357,1.735095 z"
+       d="m 71.083329,88.380939 2.17574,5.511169 5.665357,-1.735095 -2.952253,5.13722 4.888844,3.347537 -5.85714,0.89484 0.430932,5.90941 -4.351481,-4.02137 -4.351481,4.02137 0.430932,-5.90941 -5.85714,-0.89484 4.888845,-3.347537 -2.952253,-5.13722 5.665357,1.735095 z"
        inkscape:transform-center-y="-0.95769873" />
-    <path
-       sodipodi:type="star"
-       style="fill:#241c1c;fill-opacity:1;stroke:none;stroke-width:3;stroke-opacity:1"
-       id="path4948"
-       sodipodi:sides="6"
-       sodipodi:cx="427.15085"
-       sodipodi:cy="128.35002"
-       sodipodi:r1="62.885063"
-       sodipodi:r2="57.955811"
-       sodipodi:arg1="0.61629694"
-       sodipodi:arg2="1.1398957"
-       inkscape:flatsided="false"
-       inkscape:rounded="0.5"
-       inkscape:randomized="0"
-       d="m 478.4666,164.69868 c -9.14315,12.90798 -12.73604,9.70234 -27.10823,16.30941 -14.3722,6.60706 -14.27829,11.42122 -30.02851,9.957 -15.75021,-1.46421 -14.77049,-6.17855 -27.67847,-15.32171 -12.90799,-9.14315 -17.03021,-6.65475 -23.63728,-21.02694 -6.60706,-14.3722 -2.03446,-15.88091 -0.57024,-31.63112 1.46421,-15.75022 -2.75193,-18.07597 6.39123,-30.983956 9.14315,-12.907981 12.73603,-9.702346 27.10823,-16.309409 14.37219,-6.607063 14.27829,-11.421219 30.0285,-9.957006 15.75022,1.464212 14.7705,6.178558 27.67848,15.321712 12.90798,9.143154 17.03021,6.65475 23.63727,21.026949 6.60707,14.37219 2.03446,15.8809 0.57025,31.63112 -1.46421,15.75021 2.75192,18.07597 -6.39123,30.98395 z"
-       inkscape:transform-center-x="0.18228114"
-       inkscape:transform-center-y="0.043074467" />
     <path
        sodipodi:type="star"
        style="fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:1.22333407;stroke-opacity:1"
        id="path4958-3"
        sodipodi:sides="7"
        sodipodi:cx="133.04762"
-       sodipodi:cy="35.984697"
+       sodipodi:cy="35.984695"
        sodipodi:r1="10.029141"
        sodipodi:r2="5.0145707"
        sodipodi:arg1="-1.5707963"

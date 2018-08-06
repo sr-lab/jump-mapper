@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="200mm"
-   height="136.83354mm"
-   viewBox="0 0 200 136.83354"
+   width="96.571686mm"
+   height="136.83356mm"
+   viewBox="0 0 96.571686 136.83356"
    version="1.1"
    id="svg8"
    sodipodi:docname="pin_weight_tree.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.94247005"
-     inkscape:cx="-139.08067"
-     inkscape:cy="292.71248"
+     inkscape:cx="-280.36879"
+     inkscape:cy="292.71251"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-41.833344,-68.440453)">
+     transform="translate(-93.547501,-68.440453)">
     <rect
        style="fill:#000000;fill-opacity:0.83549787;stroke-width:0.03772281"
        id="rect1085"
