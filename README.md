@@ -1,7 +1,7 @@
 # Jump Mapper
 Approximating PIN guess numbers using keypad patterns.
 
-By training a model with an existing breached data set of 4-digit PINs and their frequencies, can we correctly predict the strength of previously unseen PINs using only keypad jumps? Can we extend this to longer PINs without adding any new training data?
+By training a model with an existing breached data set of 4-digit PINs and their frequencies, can we correctly predict the strength of previously unseen PINs using only keypad jumps?
 
 ## Projects
 This repository is a bit of a mixture. It's a Visual Studio solution containing several projects which are outlined below.
