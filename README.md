@@ -18,7 +18,7 @@ The options are quite straightforward:
 | input_file    | Any         | Yes       | The file containing unseen data.               |
 | format        | `plain/coq` | No        | The format of output, defaults to `plain`.     |
 
-Results are written to standard output. The `plain` format produced comma-delimited output with headings. The `coq` format option will produce a lookup-based (precomputed) valuation function and trie definition ready for use with [Skeptic](https://github.com/sr-lab/skeptic).
+Results are written to standard output. The `plain` format produced comma-delimited output with headings. The `coq` format option will produce a lookup structure compatible with [the Coq proof assistant](https://coq.inria.fr/).
 
 ## Training
 The program accepts semicolon/newline delimited files in the format:
@@ -29,6 +29,7 @@ pin2;frequency2
 pin3;frequency3
 ...
 ```
+
 
 One such file can be found [here](http://jemore.free.fr/wordpress/?p=73&t=most-common-pin-numbers-complete-list). If only four-digit PINs are provided as training data, unseen data should be limited to 4-digit PINS only or there'll be errors. Here's a sample:
 
