@@ -15,7 +15,7 @@ namespace JumpMapper
             // Check number of arguments.
             if (args.Length < 2)
             {
-                Console.WriteLine("Usage: JumpMapper <training_file> <input_file> [format]");
+                Console.WriteLine("Usage: JumpMapper <training_file> <input_file> [layout] [format]");
                 return;
             }
 
@@ -26,16 +26,28 @@ namespace JumpMapper
                 return;
             }
 
+            // Validate layout, default to ATM PIN pad.
+            var layoutLookup = new Dictionary<string, IPinPadLayout>() {
+                { "atm", new AtmPinPadLayout() },
+                { "numbar", new NumBarPinPadLayout() },
+                { "numpad", new NumPadPinPadLayout() },
+            };
+            IPinPadLayout layout = new AtmPinPadLayout();
+            if (args.Length > 2 && layoutLookup.ContainsKey(args[2]))
+            {
+                layout = layoutLookup[args[2]];
+            }
+
             // Validate format, default to plain.
             var format = "plain";
             var permittedFormats = new string[] { "plain", "coq" };
-            if (args.Length > 2 && permittedFormats.Contains(args[2]))
+            if (args.Length > 3 && permittedFormats.Contains(args[3]))
             {
-                format = args[2];
+                format = args[3];
             }
 
             // Train model.
-            var pad = new PinPadModel(new NumBarPinPadLayout());
+            var pad = new PinPadModel(layout);
             var lines = FileUtils.ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
