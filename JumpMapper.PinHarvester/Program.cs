@@ -88,7 +88,7 @@ namespace JumpMapper.PinHarvester
 
             // Populate output dictionary.
             var output = new Dictionary<string, int>();
-            var maxVal = int.Parse("".PadLeft(4, '9'));
+            var maxVal = int.Parse("".PadLeft(length, '9'));
             for (int i = 0; i <= maxVal; i++)
             {
                 output.Add(i.ToString().PadLeft(length, '0'), 0);
