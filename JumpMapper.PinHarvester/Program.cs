@@ -86,11 +86,18 @@ namespace JumpMapper.PinHarvester
                 }
             }
 
+            // Populate output dictionary.
+            var output = new Dictionary<string, int>();
+            var maxVal = int.Parse("".PadLeft(4, '9'));
+            for (int i = 0; i <= maxVal; i++)
+            {
+                output.Add(i.ToString().PadLeft(length, '0'), 0);
+            }
+
             // Read input file.
             var lines = FileUtils.ReadFileAsLines(args[0]);
 
             // Loop over input file.
-            var output = new Dictionary<string, int>();
             for (var i = 0; i < lines.Length; i++)
             {
                 // Process each chunk.
@@ -102,10 +109,6 @@ namespace JumpMapper.PinHarvester
                     for (var k = 0; k < expanded.Length; k++)
                     {
                         // Increment count of that chunk.
-                        if (!output.ContainsKey(expanded[k]))
-                        {
-                            output.Add(expanded[k], 0);
-                        }
                         output[expanded[k]]++;
                     }
                 }
